@@ -3,6 +3,9 @@ import { Container, MovieList, MovieListItem, InputBox, Search, Header } from '.
 import { useState, useEffect, useRef } from 'react';
 import { APIKey } from '../../config/key';
 import { Link } from 'react-router-dom';
+import { Url } from '../../API/url';
+
+import axios from 'axios';
 
 
 function HomePage() {
@@ -13,9 +16,11 @@ function HomePage() {
     const image_path = 'https://image.tmdb.org/t/p/w500';
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${APIKey}`)
-            .then(response => response.json())
-            .then(data => setMoviesArray(data.results))
+        axios.get(Url)
+            .then(response => {
+                setMoviesArray(response.data.results);
+            })
+            .catch(error => console.log(error))
     }, []);
 
     return (
