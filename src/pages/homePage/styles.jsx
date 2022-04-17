@@ -26,6 +26,7 @@ export const InputBox = styled.div`
     overflow: hidden;
     margin-right: 2rem;
     position: fixed;
+    z-index: 9999;
 
     input {
         padding-left: 1.5rem;
