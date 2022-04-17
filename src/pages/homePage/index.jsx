@@ -1,7 +1,6 @@
 import React from 'react'
 import { Container, MovieList, MovieListItem, InputBox, Search, Header } from './styles';
-import { useState, useEffect, useRef } from 'react';
-import { APIKey } from '../../config/key';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Url } from '../../API/url';
 
